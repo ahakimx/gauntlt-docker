@@ -31,7 +31,7 @@ RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update && \
     apt-get install -y \
      ruby2.4 \
-     ruby2.4.-dev
+     ruby2.4-dev
     
 
 
