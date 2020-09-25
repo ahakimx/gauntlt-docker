@@ -22,10 +22,18 @@ RUN apt-get update && \
       python-pip \
       python2.7 \
       python2.7-dev \
-      ruby \
-      ruby-dev \
-      ruby-bundler && \
-    rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
+
+# install ruby v 2.4.0
+RUN apt-get update && \
+    apt-get install -y software-properties-common
+RUN apt-add-repository ppa:brightbox/ruby-ng
+RUN apt-get update && \
+    apt-get install -y \
+     ruby2.4 \
+     ruby2.4.-dev
+    
+
 
 # Install Gauntlt
 RUN gem install rake
